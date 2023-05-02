@@ -1,0 +1,5 @@
+postgres/
+s3server/
+*__pycache__/
+*.pyc
+.vscode/

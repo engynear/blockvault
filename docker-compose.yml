@@ -1,0 +1,21 @@
+version: '3'
+services:
+  s3server:
+    image: scality/s3server
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./s3server/data:/usr/src/app/localData
+      - ./s3server/metadata:/usr/src/app/localMetadata
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: engynear
+      POSTGRES_PASSWORD: 132wersdf
+      POSTGRES_DB: blockvault
+    volumes:
+      - .postgres/data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"

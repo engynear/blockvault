@@ -1,0 +1,6 @@
+[submodule "app"]
+	path = app
+	url = git@github.com:engynear/blockvault-app.git
+[submodule "server"]
+	path = server
+	url = git@github.com:engynear/blockvault-server.git
