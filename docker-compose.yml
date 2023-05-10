@@ -1,13 +1,5 @@
 version: '3'
 services:
-  # s3server:
-  #   image: scality/s3server
-  #   restart: always
-  #   ports:
-  #     - "8000:8000"
-  #   volumes:
-  #     - ./s3server/data:/usr/src/app/localData
-  #     - ./s3server/metadata:/usr/src/app/localMetadata
   minio:
     image: minio/minio
     restart: always
@@ -19,8 +11,8 @@ services:
       MINIO_ACCESS_KEY: minio
       MINIO_SECRET_KEY: miniosecret
     volumes:
-      - ./minio/data:/data
-      - ./minio/metadata:/metadata
+      - .minio/data:/data
+      - .minio/metadata:/metadata
     labels:
       - "com.docker.architecture=arm64v8"
   postgres:
